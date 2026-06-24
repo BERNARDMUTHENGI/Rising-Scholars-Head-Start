@@ -6,12 +6,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-dark text-gray-300 py-8 sm:py-10">
+    <footer className="bg-gray-800 text-gray-300 py-8 sm:py-10">
       <div className="container-custom text-center">
         <p className="text-lg sm:text-xl text-secondary font-semibold">
           {siteContent.name}
         </p>
-        <p className="text-sm sm:text-base italic">"{siteContent.tagline}"</p>
+        <p className="text-sm sm:text-base italic text-gray-400">"{siteContent.tagline}"</p>
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-4 text-sm sm:text-base">
           <Link to="/" className="hover:text-secondary transition-colors">Home</Link>
           <Link to="/about" className="hover:text-secondary transition-colors">About</Link>
@@ -20,7 +20,7 @@ const Footer = () => {
           <Link to="/faq" className="hover:text-secondary transition-colors">FAQ</Link>
           <Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link>
         </div>
-        <p className="text-xs sm:text-sm text-gray-500 mt-4">
+        <p className="text-xs sm:text-sm text-gray-600 mt-4">
           &copy; {currentYear} {siteContent.name}. All rights reserved.
         </p>
       </div>

@@ -3,7 +3,12 @@ import { siteContent } from '../../data/content'
 import ClassroomCard from './ClassroomCard'
 
 const PreschoolRoom = () => {
-  return <ClassroomCard data={siteContent.classrooms.preschool} />
+  return (
+    <ClassroomCard 
+      data={siteContent.classrooms.preschool} 
+      imageUrl="/images/preschool-room.jpg"
+    />
+  )
 }
 
 export default PreschoolRoom

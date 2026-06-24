@@ -1,23 +1,44 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 @theme {
-  --color-primary: #b22234;
-  --color-primary-light: #c9353a;
-  --color-secondary: #fdb813;
-  --color-dark: #1a1a2e;
-  --color-gray: #f5f0eb;
+  --font-sans: "Manrope", sans-serif;
+
+  --color-primary: #c97b7b;
+  --color-primary-light: #dba4a4;
+  --color-primary-dark: #b06868;
+  --color-secondary: #e8c9a0;
+  --color-secondary-light: #f0dbb8;
+  --color-secondary-dark: #dbb88c;
+  --color-cream: #fdfbf9;
+  --color-cream-light: #fefcfb;
+  --color-cream-dark: #f5f0eb;
+  --color-white: #ffffff;
+  --color-gray: #f8f5f2;
+  --color-gray-light: #faf8f6;
   --color-text: #2d2d2d;
+  --color-text-light: #5d6d7e;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-family: var(--font-sans);
   }
+
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: inherit;
     color: var(--color-text);
-    background: var(--color-gray);
+    background: var(--color-cream);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  * {
+    font-family: inherit;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
@@ -28,25 +49,30 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
   .section-title {
-    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-6 sm:mb-8 
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-dark mb-6 sm:mb-8 
            border-l-4 border-secondary pl-4 sm:pl-6;
   }
+
   .card {
-    @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 
-           p-5 sm:p-6 lg:p-8 border-t-4 border-primary;
+    @apply bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 
+           p-4 sm:p-5 md:p-6 lg:p-8 border-t-4 border-primary-light;
   }
+
   .card-hover {
-    @apply hover:-translate-y-1 hover:shadow-xl;
+    @apply hover:-translate-y-1 hover:shadow-md;
   }
+
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold 
-           hover:bg-primary-light transition-all duration-300 
-           hover:scale-105 active:scale-95;
+    @apply bg-primary text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold 
+           hover:bg-primary-dark transition-all duration-300 
+           hover:scale-105 active:scale-95 shadow-sm text-sm sm:text-base;
   }
+
   .btn-secondary {
-    @apply bg-secondary text-dark px-6 py-3 rounded-lg font-semibold 
-           hover:bg-yellow-400 transition-all duration-300 
-           hover:scale-105 active:scale-95;
+    @apply bg-secondary text-gray-800 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold 
+           hover:bg-secondary-dark transition-all duration-300 
+           hover:scale-105 active:scale-95 shadow-sm text-sm sm:text-base;
   }
 }
